@@ -1,0 +1,14 @@
+org\liuhao\pojo\PolicyList.class
+org\liuhao\core\ConsumerFactory.class
+org\liuhao\queen\Queen.class
+org\liuhao\pojo\Person.class
+org\liuhao\core\ConsumerThread.class
+org\liuhao\core\XmlUtils.class
+org\liuhao\core\XmlUtils$1.class
+org\liuhao\constant\ObjectMap.class
+org\liuhao\utils\FileUtils.class
+org\liuhao\constant\Constant.class
+org\liuhao\pojo\Root.class
+org\liuhao\pojo\Policy.class
+org\liuhao\core\ConsElementHandler.class
+org\liuhao\core\ConsumerMyThread.class

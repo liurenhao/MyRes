@@ -1,5 +1,8 @@
 package org.liuhao.pojo;
 
+import org.liuhao.annotation.Doc;
+
+@Doc(path="/gen/Root/PolicyList/Policy/Person")
 public class Person {
 	String name;
 	int age;

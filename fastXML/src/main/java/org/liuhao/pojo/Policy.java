@@ -1,5 +1,8 @@
 package org.liuhao.pojo;
 
+import org.liuhao.annotation.Doc;
+
+@Doc(path="/gen/Root/PolicyList/Policy")
 public class Policy {
 	String proposalno;
 	String premium;

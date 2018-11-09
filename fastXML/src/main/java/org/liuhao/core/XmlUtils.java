@@ -13,6 +13,8 @@ import java.util.concurrent.Executors;
 
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
+import org.liuhao.config.Config;
+import org.liuhao.constant.ObjectMap;
 import org.liuhao.queen.Queen;
 
 public class XmlUtils {
@@ -24,7 +26,7 @@ public class XmlUtils {
 	static {
 		Properties properties = new Properties();
 		// 使用ClassLoader加载properties配置文件生成对应的输入流
-		InputStream in = XmlUtils.class.getClassLoader().getResourceAsStream("config/path.properties");
+		InputStream in = XmlUtils.class.getClassLoader().getResourceAsStream("config/config.properties");
 		// 使用properties对象加载输入流
 		try {
 			properties.load(in);
@@ -47,7 +49,7 @@ public class XmlUtils {
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
-			reader.addHandler(path, new ConsElementHandler(cls));
+			reader.addHandler(path, new ConsElementHandler(cls,new Config()));
 		});
 		new Thread(new Runnable() {
 			@Override
@@ -77,6 +79,8 @@ public class XmlUtils {
 		while (!newFixedThreadPool.isTerminated()) {
 
 		}
+		
+		
 		long end = System.currentTimeMillis();
 		System.out.println("耗时：" + (end - start) + "ms");
 

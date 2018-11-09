@@ -9,6 +9,7 @@ import java.util.Map;
 import org.dom4j.Element;
 import org.dom4j.ElementHandler;
 import org.dom4j.ElementPath;
+import org.liuhao.config.Config;
 import org.liuhao.constant.Constant;
 import org.liuhao.constant.ObjectMap;
 import org.liuhao.queen.Queen;
@@ -16,10 +17,12 @@ import org.liuhao.queen.Queen;
 public class ConsElementHandler implements ElementHandler {
 
 	Class<?> cls;
+	Config config;
 
-	public ConsElementHandler(Class<?> cls) {
+	public ConsElementHandler(Class<?> cls,Config config) {
 		super();
 		this.cls = cls;
+		this.config = config;
 	}
 
 	@Override
@@ -86,7 +89,7 @@ public class ConsElementHandler implements ElementHandler {
 			});
 
 			// 判断是否根对象
-			if (parent.getName().equals(Constant.ROOT)) {
+			if (parent.getName().equals(config.getDocument().getPojo().getRoot())) {
 				// 对象入库
 //				 System.out.println(obj.toString());
 				Queen.queue.put(obj);

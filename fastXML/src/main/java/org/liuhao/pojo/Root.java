@@ -1,5 +1,8 @@
 package org.liuhao.pojo;
 
+import org.liuhao.annotation.Doc;
+
+@Doc(path="/gen/Root")
 public class Root {
 	String rootName;
 	PolicyList policyList;

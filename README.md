@@ -2,7 +2,7 @@
 快速解析超大XML工具
 
 
-#配置文件config.properties
+## 配置文件config.properties
 
 #pojo.package-name=org.liuhao.pojo
 指定pojo类的包路径
@@ -11,7 +11,7 @@
 #thread.num=20
 指定处理对象的线程数量
 
-#自定义注解
+## 自定义注解
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Doc {
@@ -25,10 +25,10 @@ public class Person {
   ...
 }
 
-#关于解析对象的自定义处理 ConsumerMyThread
+## 关于解析对象的自定义处理 ConsumerMyThread
 
 继承ConsumerThread类， 实现handle(Object obj)方法
 
 
-#入口类
+## 入口类
 FastXml.readXml("e:\\test11.xml", ConsumerMyThread.class);
